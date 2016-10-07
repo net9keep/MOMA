@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:scaleType="fitStart"
+        android:background="@drawable/top" />
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:scaleType="fitStart"
+        android:background="@drawable/mid1"
+        android:onClick="moveActivity"/>
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:scaleType="fitStart"
+        android:background="@drawable/mid2"
+        android:onClick="moveActivity"/>
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:scaleType="fitStart"
+        android:background="@drawable/mid3"
+        android:onClick="moveActivity"/>
+</LinearLayout>
