@@ -1,19 +1,14 @@
 package com.example.achaean.moma_app;
 
-import com.example.achaean.moma_app.Chair_State;
 import android.app.Dialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.media.Image;
 import android.os.Bundle;
-import android.os.Looper;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
@@ -24,8 +19,6 @@ import android.widget.Toast;
 
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 import java.util.logging.Handler;
@@ -94,7 +87,7 @@ public class control extends AppCompatActivity{
         final Chair_State state = new Chair_State(getState, editor);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.setContentView(R.layout.activitiy_popup);
+        dialog.setContentView(R.layout.activitiy_popup_chair);
         //down = 0
         //up = 1
         final ImageView upImg = (ImageView)dialog.findViewById(R.id.up);
