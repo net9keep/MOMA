@@ -36,10 +36,38 @@
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:layout_marginLeft="40dp"
+            android:layout_marginBottom="201dp"
+            android:layout_alignBottom="@+id/control_middle"
+            android:id="@+id/control_chair1_down"
+            android:visibility="invisible"
+            android:background="@drawable/control_chair1_imposs"/>
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginBottom="142dp"
             android:layout_alignBottom="@+id/control_middle"
             android:id="@+id/control_chair1"
             android:background="@drawable/control_chair1_poss"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="55dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginBottom="142dp"
+            android:layout_alignEnd="@+id/control_middle"
+            android:layout_alignBottom="@+id/control_middle"
+            android:id="@+id/control_light"
+            android:background="@drawable/chair_light_poss"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="53dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginBottom="201dp"
+            android:layout_alignEnd="@+id/control_middle"
+            android:layout_alignBottom="@+id/control_middle"
+            android:visibility="invisible"
+            android:id="@+id/control_light_down"
+            android:background="@drawable/chair_light_imposs"/>
     </RelativeLayout>
 
 

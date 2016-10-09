@@ -46,7 +46,7 @@ public class control extends AppCompatActivity{
     private int[] chairState = new int[2];
     private SharedPreferences getState;
     private SharedPreferences.Editor editor;
-
+    ImageView
 
 
 
@@ -58,6 +58,7 @@ public class control extends AppCompatActivity{
 
         ImageView backImg = (ImageView)findViewById(R.id.backbtn);
         ImageView okImg = (ImageView)findViewById(R.id.okbtn);
+
         getState = getSharedPreferences("state",0);
         editor = getState.edit();
         backImg.setOnClickListener(new View.OnClickListener(){
@@ -69,20 +70,16 @@ public class control extends AppCompatActivity{
         okImg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                CreateDialog(1);
+                CreateChairDialog(1);
             }
         });
-        int location[] = new int[2];
-        okImg.getLocationOnScreen(location);
-        Toast.makeText(getApplicationContext(),"x : "+location[0]+" y : " + location[1],Toast.LENGTH_LONG).show();
-        CreateDialog(1);
         //getState();
 
         //checkBluetooth();
     }
 
 
-    protected void CreateDialog(final int chairNumber){
+    protected void CreateChairDialog(final int chairNumber){
         final Dialog dialog = new Dialog(this);
         final Chair_State state = new Chair_State(getState, editor);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
