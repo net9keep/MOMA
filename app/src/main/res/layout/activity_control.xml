@@ -69,24 +69,4 @@
             android:id="@+id/control_light_down"
             android:background="@drawable/chair_light_imposs"/>
     </RelativeLayout>
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/sendButton1"
-        android:layout_gravity="center_horizontal" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/sendButton2"
-        android:layout_gravity="center_horizontal" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/text"/>
 </LinearLayout>

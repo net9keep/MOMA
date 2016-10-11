@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="260dp"
-    android:layout_height="300dp"
-    android:background="@drawable/popup_light">
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="20dp"
-        android:src="@drawable/cancel"
-        android:layout_gravity="end"/>
-    <ImageView
-        android:layout_marginTop="10dp"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:src="@drawable/light_off"
-        android:layout_gravity="center"/>
+    android:layout_height="300dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/popup_light"
+            android:id="@+id/popup_light_background" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/Light_cancel"
+            android:background="@drawable/light_cancel"
+            android:layout_alignEnd="@+id/popup_light_background"/>
+        <ImageView
+            android:layout_marginTop="40dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:id="@+id/LightState"
+            android:layout_marginLeft="70dp"/>
+    </RelativeLayout>
 
 </LinearLayout>

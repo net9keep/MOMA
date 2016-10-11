@@ -15,7 +15,6 @@ public class main extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        startActivity(new Intent(this, splash.class));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
@@ -23,6 +22,7 @@ public class main extends AppCompatActivity {
     public void moveActivity(View v){
         Intent intent = new Intent(this, control.class);
         startActivity(intent);
+        finish();
     }
     public void onBackPressed(){
         super.onBackPressed();

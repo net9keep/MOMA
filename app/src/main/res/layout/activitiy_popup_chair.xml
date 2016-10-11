@@ -8,13 +8,15 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_gravity="center_vertical"
-        android:background="@drawable/popup_chair">
+        android:background="@drawable/popup_chair"
+        android:id="@+id/popup_chair_background">
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="20dp"
-            android:src="@drawable/cancel"
+            android:id="@+id/popup_chair_cancel"
+            android:background="@drawable/chair_cancel"
             android:layout_gravity="end"/>
         <ImageView
             android:layout_width="80dp"
@@ -23,8 +25,8 @@
             android:layout_marginTop="25dp"
             android:layout_marginLeft="5dp"
             android:id="@+id/up"
-            android:onClick="onClick"
-            android:background="@drawable/up"/>
+            android:background="@drawable/up"
+            android:onClick="onClick" />
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -32,7 +34,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:id="@+id/down"
-            android:onClick="onClick"
-            android:background="@drawable/down"/>
+            android:background="@drawable/down"
+            android:onClick="onClick"/>
     </LinearLayout>
 </LinearLayout>
