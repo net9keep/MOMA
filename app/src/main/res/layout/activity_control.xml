@@ -31,29 +31,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/control_middle"
-            android:background="@drawable/control_middle"/>
+            android:background="@drawable/control_background"/>
         <ImageView
-            android:layout_width="55dp"
-            android:layout_height="55dp"
+            android:layout_width="24dp"
+            android:layout_height="56dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginBottom="201dp"
+            android:layout_marginBottom="138dp"
             android:layout_alignBottom="@+id/control_middle"
             android:id="@+id/control_chair1_down"
-            android:visibility="invisible"
-            android:background="@drawable/control_chair1_imposs"/>
+            android:background="@drawable/control_chair2_poss"/>
         <ImageView
-            android:layout_width="55dp"
-            android:layout_height="55dp"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginBottom="142dp"
+            android:layout_marginBottom="200dp"
             android:layout_alignBottom="@+id/control_middle"
+            android:layout_centerHorizontal="true"
             android:id="@+id/control_chair1"
             android:background="@drawable/control_chair1_poss"/>
         <ImageView
             android:layout_width="20dp"
-            android:layout_height="55dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginBottom="142dp"
+            android:layout_height="52dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="140dp"
             android:layout_alignEnd="@+id/control_middle"
             android:layout_alignBottom="@+id/control_middle"
             android:id="@+id/control_light"
