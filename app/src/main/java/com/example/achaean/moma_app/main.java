@@ -17,12 +17,12 @@ public class main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     public void moveActivity(View v){
         Intent intent = new Intent(this, control.class);
         startActivity(intent);
-        finish();
     }
     public void onBackPressed(){
         super.onBackPressed();

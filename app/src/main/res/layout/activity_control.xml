@@ -16,13 +16,7 @@
             android:layout_margin="10dp"
             android:id="@+id/backbtn"
             android:background="@drawable/back_button"/>
-        <ImageView
-            android:layout_width="70dp"
-            android:layout_height="40dp"
-            android:layout_margin="10dp"
-            android:id="@+id/okbtn"
-            android:layout_alignEnd="@+id/control_top"
-            android:background="@drawable/ok_button"/>
+
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -33,40 +27,50 @@
             android:id="@+id/control_middle"
             android:background="@drawable/control_background"/>
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="56dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginBottom="138dp"
+            android:layout_width="22dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="130dp"
             android:layout_alignBottom="@+id/control_middle"
-            android:id="@+id/control_chair1_down"
+            android:id="@+id/control_chair2_up"
             android:background="@drawable/control_chair2_poss"/>
         <ImageView
-            android:layout_width="52dp"
-            android:layout_height="52dp"
+            android:layout_width="22dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="185dp"
+            android:layout_alignBottom="@+id/control_middle"
+            android:id="@+id/control_chair2_down"
+            android:background="@drawable/control_chair2_poss"
+            android:visibility="gone"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginBottom="200dp"
+            android:layout_marginBottom="185dp"
             android:layout_alignBottom="@+id/control_middle"
             android:layout_centerHorizontal="true"
-            android:id="@+id/control_chair1"
+            android:id="@+id/control_chair1_down"
             android:background="@drawable/control_chair1_poss"/>
         <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="130dp"
+            android:layout_marginLeft="40dp"
+            android:layout_alignBottom="@+id/control_middle"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/control_chair1_up"
+            android:background="@drawable/control_chair1_poss"
+            android:visibility="gone"/>
+        <ImageView
             android:layout_width="20dp"
-            android:layout_height="52dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="140dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="131dp"
             android:layout_alignEnd="@+id/control_middle"
             android:layout_alignBottom="@+id/control_middle"
             android:id="@+id/control_light"
             android:background="@drawable/chair_light_poss"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="53dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginBottom="201dp"
-            android:layout_alignEnd="@+id/control_middle"
-            android:layout_alignBottom="@+id/control_middle"
-            android:visibility="invisible"
-            android:id="@+id/control_light_down"
-            android:background="@drawable/chair_light_imposs"/>
+
     </RelativeLayout>
 </LinearLayout>

@@ -9,20 +9,20 @@
         android:background="@drawable/top" />
     <ImageButton
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="200dp"
         android:scaleType="fitStart"
-        android:background="@drawable/mid1"
+        android:background="@drawable/main_reading"
         android:onClick="moveActivity"/>
     <ImageButton
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="200dp"
         android:scaleType="fitStart"
-        android:background="@drawable/mid2"
+        android:background="@drawable/main_healing"
         android:onClick="moveActivity"/>
     <ImageButton
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="200dp"
         android:scaleType="fitStart"
-        android:background="@drawable/mid3"
+        android:background="@drawable/main_communication"
         android:onClick="moveActivity"/>
 </LinearLayout>

@@ -25,8 +25,8 @@ public class Chair_State extends AppCompatActivity{
                 chairState = state.getInt("chair1",0);
                 return chairState;
             case CHAIR_TWO:
-                Toast.makeText(getApplicationContext(),"미구현 의자",Toast.LENGTH_LONG).show();
-                break;
+                chairState = state.getInt("chair2",0);
+                return chairState;
             case CHAIR_THREE:
                 Toast.makeText(getApplicationContext(),"미구현 의자",Toast.LENGTH_LONG).show();
                 break;
@@ -47,7 +47,11 @@ public class Chair_State extends AppCompatActivity{
                 saveChairState();
                 break;
             case CHAIR_TWO:
-                Toast.makeText(getApplicationContext(),"미구현 의자",Toast.LENGTH_LONG).show();
+                if(chairState==1)
+                    editor.putInt("chair2",0);
+                else
+                    editor.putInt("chair2",1);
+                saveChairState();
                 break;
             case CHAIR_THREE:
                 Toast.makeText(getApplicationContext(),"미구현 의자",Toast.LENGTH_LONG).show();

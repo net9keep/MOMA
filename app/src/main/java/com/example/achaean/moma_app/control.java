@@ -56,11 +56,6 @@ public class control extends AppCompatActivity{
             finish();
         }
     };
-    ImageView.OnClickListener okImgClick = new View.OnClickListener(){
-        public void onClick(View v){
-            CreateChairDialog(1);
-        }
-    };
     ImageView.OnClickListener chair1UpClick = new View.OnClickListener(){
         public void onClick(View v){
             CreateChairDialog(1);
@@ -71,16 +66,46 @@ public class control extends AppCompatActivity{
             CreateChairDialog(1);
         }
     };
+    ImageView.OnClickListener chair2UpClick = new View.OnClickListener(){
+        public void onClick(View v){
+            CreateChairDialog(2);
+        }
+    };
+    ImageView.OnClickListener chair2DownClick = new View.OnClickListener(){
+        public void onClick(View v){
+            CreateChairDialog(2);
+        }
+    };
     ImageView.OnClickListener LightUpClick = new View.OnClickListener(){
         public void onClick(View v){
             CreateLightDialog();
         }
     };
-    ImageView.OnClickListener LightDownClick = new View.OnClickListener(){
-        public void onClick(View v){
-            CreateLightDialog();
+    private void setChairImage(){
+        final Chair_State state = new Chair_State(getState, editor);
+        final ImageView chair1up = (ImageView)findViewById(R.id.control_chair1_up);
+        final ImageView chair1down = (ImageView)findViewById(R.id.control_chair1_down);
+
+        final ImageView chair2up = (ImageView)findViewById(R.id.control_chair2_up);
+        final ImageView chair2down = (ImageView)findViewById(R.id.control_chair2_down);
+
+        if(state.getChairState(1)==0){
+            chair1down.setVisibility(View.VISIBLE);
+            chair1up.setVisibility(View.GONE);
+        }else if(state.getChairState(1)==1)
+        {
+            chair1down.setVisibility(View.GONE);
+            chair1up.setVisibility(View.VISIBLE);
         }
-    };
+        if(state.getChairState(2)==0){
+            chair2down.setVisibility(View.VISIBLE);
+            chair2up.setVisibility(View.GONE);
+        }else if(state.getChairState(2)==1)
+        {
+            chair2down.setVisibility(View.GONE);
+            chair2up.setVisibility(View.VISIBLE);
+        }
+    }
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_control);
@@ -88,13 +113,14 @@ public class control extends AppCompatActivity{
 
 
         findViewById(R.id.backbtn).setOnClickListener(backImgClick);
-        findViewById(R.id.okbtn).setOnClickListener(okImgClick);
-        findViewById(R.id.control_chair1).setOnClickListener(chair1UpClick);
+        findViewById(R.id.control_chair1_up).setOnClickListener(chair1UpClick);
         findViewById(R.id.control_chair1_down).setOnClickListener(chair1DownClick);
+        findViewById(R.id.control_chair2_up).setOnClickListener(chair2UpClick);
+        findViewById(R.id.control_chair2_down).setOnClickListener(chair2DownClick);
         findViewById(R.id.control_light).setOnClickListener(LightUpClick);
-        findViewById(R.id.control_light_down).setOnClickListener(LightDownClick);
         getState = getSharedPreferences("state",0);
         editor = getState.edit();
+        setChairImage();
 
         //getState();
         checkBluetooth();
@@ -150,9 +176,10 @@ public class control extends AppCompatActivity{
         final ImageView cancel = (ImageView)dialog.findViewById(R.id.popup_chair_cancel);
         final ImageView upImg = (ImageView)dialog.findViewById(R.id.up);
         final ImageView downImg = (ImageView)dialog.findViewById(R.id.down);
-        final ImageView chair1Img = (ImageView)findViewById(R.id.control_chair1);
-        final ImageView chair1downImg = (ImageView)findViewById(R.id.control_chair1_down);
-        chair1Img.setBackgroundResource(R.drawable.control_chair1_click);
+        final ImageView chair1up = (ImageView)findViewById(R.id.control_chair1_up);
+        final ImageView chair1down = (ImageView)findViewById(R.id.control_chair1_down);
+        final ImageView chair2up = (ImageView)findViewById(R.id.control_chair2_up);
+        final ImageView chair2down = (ImageView)findViewById(R.id.control_chair2_down);
         upImg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -161,8 +188,13 @@ public class control extends AppCompatActivity{
                 else{
                     sendData("1");
                     state.editChairState(chairNumber);
-                    chair1Img.setVisibility(View.GONE);
-                    chair1downImg.setVisibility(View.VISIBLE);
+                    if(chairNumber==1) {
+                        chair1down.setVisibility(View.GONE);
+                        chair1up.setVisibility(View.VISIBLE);
+                    }else if(chairNumber==2){
+                        chair2up.setVisibility(View.VISIBLE);
+                        chair2down.setVisibility(View.GONE);
+                    }
                     Toast.makeText(getApplicationContext(),"의자가 올라갔습니다."+state.getChairState(chairNumber), Toast.LENGTH_LONG).show();
                     dialog.cancel();
                 }
@@ -176,8 +208,13 @@ public class control extends AppCompatActivity{
                 else{
                     sendData("0");
                     state.editChairState(chairNumber);
-                    chair1downImg.setVisibility(View.GONE);
-                    chair1Img.setVisibility(View.VISIBLE);
+                    if(chairNumber==1) {
+                        chair1down.setVisibility(View.VISIBLE);
+                        chair1up.setVisibility(View.GONE);
+                    }else if(chairNumber==2){
+                        chair2up.setVisibility(View.GONE);
+                        chair2down.setVisibility(View.VISIBLE);
+                    }
                     Toast.makeText(getApplicationContext(),"의자가 내려갔습니다."+state.getChairState(chairNumber), Toast.LENGTH_LONG).show();
                     dialog.cancel();
                 }
