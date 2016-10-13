@@ -17,7 +17,6 @@ import android.widget.Toast;
  */
 public class popup_light extends AppCompatActivity {
     Dialog dialog = new Dialog(this);
-    LinearLayout background = (LinearLayout)findViewById(R.id.popup_light_background);
     ImageView cancel = (ImageView)findViewById(R.id.Light_cancel);
     ImageView state = (ImageView)findViewById(R.id.LightState);
 
@@ -32,7 +31,6 @@ public class popup_light extends AppCompatActivity {
 
     @Override
     public void onDestroy(){
-        recycleView(background);
         recycleView(cancel);
         recycleView(state);
     }

@@ -180,18 +180,25 @@ public class control extends AppCompatActivity{
         final ImageView chair1down = (ImageView)findViewById(R.id.control_chair1_down);
         final ImageView chair2up = (ImageView)findViewById(R.id.control_chair2_up);
         final ImageView chair2down = (ImageView)findViewById(R.id.control_chair2_down);
+        final ImageView up = (ImageView)dialog.findViewById(R.id.up);
+        final ImageView down = (ImageView)dialog.findViewById(R.id.down);
+        if(chairNumber==2){
+            up.setImageResource(R.drawable.chair2_up);
+            down.setImageResource(R.drawable.chair2_down);
+        }
         upImg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 if(state.getChairState(chairNumber) == 1)
                     Toast.makeText(getApplicationContext(),"이미 의자가 올라가 있습니다",Toast.LENGTH_LONG).show();
                 else{
-                    sendData("1");
                     state.editChairState(chairNumber);
                     if(chairNumber==1) {
+                        sendData("1@250");
                         chair1down.setVisibility(View.GONE);
                         chair1up.setVisibility(View.VISIBLE);
                     }else if(chairNumber==2){
+                        sendData("2@270");
                         chair2up.setVisibility(View.VISIBLE);
                         chair2down.setVisibility(View.GONE);
                     }
@@ -206,12 +213,13 @@ public class control extends AppCompatActivity{
                 if(state.getChairState(chairNumber) == 0)
                     Toast.makeText(getApplicationContext(),"이미 의자가 내려가 있습니다",Toast.LENGTH_LONG).show();
                 else{
-                    sendData("0");
                     state.editChairState(chairNumber);
                     if(chairNumber==1) {
+                        sendData("1#250");
                         chair1down.setVisibility(View.VISIBLE);
                         chair1up.setVisibility(View.GONE);
                     }else if(chairNumber==2){
+                        sendData("2#270");
                         chair2up.setVisibility(View.GONE);
                         chair2down.setVisibility(View.VISIBLE);
                     }
@@ -352,7 +360,7 @@ public class control extends AppCompatActivity{
 
         }catch(Exception e){
             Toast.makeText(getApplicationContext(),"블루투스 연결이 되어 있지 않습니다",Toast.LENGTH_LONG).show();
-            //finish();
+            finish();
         }
     }
 
