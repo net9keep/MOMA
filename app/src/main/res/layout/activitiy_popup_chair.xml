@@ -19,22 +19,38 @@
             android:background="@drawable/chair_cancel"
             android:layout_gravity="end"/>
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
             android:layout_marginLeft="5dp"
             android:id="@+id/up"
             android:background="@drawable/up"
             android:onClick="onClick" />
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:id="@+id/chair_text"
+            android:text="CHAIR MODE"/>
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
             android:layout_marginLeft="5dp"
             android:id="@+id/down"
             android:background="@drawable/down"
             android:onClick="onClick"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:id="@+id/table_text"
+            android:text="TABLE MODE"/>
     </LinearLayout>
 </LinearLayout>

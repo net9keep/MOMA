@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.media.Image;
@@ -19,6 +20,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.InputStream;
@@ -182,6 +185,12 @@ public class control extends AppCompatActivity{
         final ImageView chair2down = (ImageView)findViewById(R.id.control_chair2_down);
         final ImageView up = (ImageView)dialog.findViewById(R.id.up);
         final ImageView down = (ImageView)dialog.findViewById(R.id.down);
+        final TextView chair_text = (TextView)dialog.findViewById(R.id.chair_text);
+        final TextView table_text = (TextView)dialog.findViewById(R.id.table_text);
+        chair_text.setTypeface(Typeface.createFromAsset(getAssets(), "font/YunGothic350.ttf"));
+        table_text.setTypeface(Typeface.createFromAsset(getAssets(), "font/YunGothic350.ttf"));
+
+
         if(chairNumber==2){
             up.setImageResource(R.drawable.chair2_up);
             down.setImageResource(R.drawable.chair2_down);
@@ -202,7 +211,7 @@ public class control extends AppCompatActivity{
                         chair2up.setVisibility(View.VISIBLE);
                         chair2down.setVisibility(View.GONE);
                     }
-                    Toast.makeText(getApplicationContext(),"의자가 올라갔습니다."+state.getChairState(chairNumber), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"의자가 올라갔습니다.", Toast.LENGTH_LONG).show();
                     dialog.cancel();
                 }
             }
@@ -218,12 +227,13 @@ public class control extends AppCompatActivity{
                         sendData("1#250");
                         chair1down.setVisibility(View.VISIBLE);
                         chair1up.setVisibility(View.GONE);
+
                     }else if(chairNumber==2){
                         sendData("2#270");
                         chair2up.setVisibility(View.GONE);
                         chair2down.setVisibility(View.VISIBLE);
                     }
-                    Toast.makeText(getApplicationContext(),"의자가 내려갔습니다."+state.getChairState(chairNumber), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"의자가 내려갔습니다.", Toast.LENGTH_LONG).show();
                     dialog.cancel();
                 }
             }
